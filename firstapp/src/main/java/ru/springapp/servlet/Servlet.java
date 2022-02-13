@@ -1,4 +1,6 @@
-package servlet;
+package ru.springapp.servlet;
+
+import ru.springapp.entities.Product;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package servlet;
+package ru.springapp.entities;
 
 public class Product {
     private int id;
