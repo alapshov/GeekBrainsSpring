@@ -26,9 +26,9 @@ public class ProductsController {
         return productService.getAllProducts();
     }
 
-    @RequestMapping(value = "/product", method = RequestMethod.GET)
+    @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public Product getProductById(Model model, @RequestParam int id) {
+    public Product getProductById(Model model, @PathVariable("id") int id) {
         return productService.getProductById(id);
     }
 
