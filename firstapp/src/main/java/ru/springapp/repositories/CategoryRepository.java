@@ -1,31 +1,13 @@
 package ru.springapp.repositories;
 
-import org.hibernate.Session;
-import org.springframework.stereotype.Component;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
 import ru.springapp.entities.Category;
 
 import java.util.List;
 
-@Component
-public class CategoryRepository {
-    private List<Category> categories;
-
-//    public CategoryRepository() {
-//        Session session = SessionCreator.getSession();
-//        session.beginTransaction();
-//        categories = session.createQuery("from Category").getResultList();
-//    }
-//
-//    public List<Category> getCategories() {
-//        return categories;
-//    }
-//
-//    public Category getCategoryId(int id) {
-//        for (Category category: categories) {
-//            if(category.getId() == id) {
-//                return category;
-//            }
-//        }
-//        return null;
-//    }
+@Repository
+public interface CategoryRepository extends CrudRepository<Category, Long> {
+    List<Category> findAll();
+    Category findById(int id);
 }

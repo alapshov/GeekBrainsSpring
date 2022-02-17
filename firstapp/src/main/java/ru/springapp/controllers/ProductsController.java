@@ -40,13 +40,13 @@ public class ProductsController {
     @RequestMapping(value = "/allcategories", method = RequestMethod.GET)
     @ResponseBody
     public List<Category> getAllCategories() {
-        return null; //categoryService.getAllCategories();
+        return categoryService.getAllCategories();
     }
 
     @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Category getCategoryById(Model model, @PathVariable("id") int id) {
-        return null; //categoryService.getCategoryById(id);
+        return categoryService.getCategoryById(id);
     }
 
 }
