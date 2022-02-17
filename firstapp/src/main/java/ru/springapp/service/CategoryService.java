@@ -9,18 +9,18 @@ import java.util.List;
 
 @Service
 public class CategoryService {
-    private CategoryRepository categoryRepository;
-
-    @Autowired
-    private void setCategoryRepository(CategoryRepository categoryRepository){
-        this.categoryRepository = categoryRepository;
-    }
-
-    public List<Category> getAllCategories(){
-        return categoryRepository.getCategories();
-    }
-
-    public Category getCategoryById(int id) {
-        return categoryRepository.getCategoryId(id);
-    }
+//    private CategoryRepository categoryRepository;
+//
+//    @Autowired
+//    private void setCategoryRepository(CategoryRepository categoryRepository){
+//        this.categoryRepository = categoryRepository;
+//    }
+//
+//    public List<Category> getAllCategories(){
+//        return categoryRepository.getCategories();
+//    }
+//
+//    public Category getCategoryById(int id) {
+//        return categoryRepository.getCategoryId(id);
+//    }
 }
