@@ -48,5 +48,11 @@ public class ProductsController {
     public Category getCategoryById(Model model, @PathVariable("id") int id) {
         return categoryService.getCategoryById(id);
     }
+    @RequestMapping(value = "/product/delete/{id}", method = RequestMethod.DELETE)
+    @ResponseBody
+    public void getDeleteById(Model model, @PathVariable("id") int id) {
+        productService.deleteProductById(id);
+    }
+
 
 }
