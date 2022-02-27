@@ -27,8 +27,10 @@ public class ProductsController {
 
     @RequestMapping(value = "/allproducts", method = RequestMethod.GET)
     @ResponseBody
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    public String getAllProducts(Model model) {
+         List<Product> products = productService.getAllProducts();
+         model.addAttribute("productList", products);
+         return "products-list";
     }
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
@@ -50,8 +52,23 @@ public class ProductsController {
     }
     @RequestMapping(value = "/product/delete/{id}", method = RequestMethod.DELETE)
     @ResponseBody
-    public void getDeleteById(Model model, @PathVariable("id") int id) {
+    public String deleteById(Model model, @PathVariable("id") int id) {
         productService.deleteProductById(id);
+        return "/products/allproducts";
+    }
+
+    @RequestMapping(path="/add", method=RequestMethod.GET)
+    public String showAddForm(Model model) {
+        Product product = new Product();
+        product.setTitle("Unknown");
+        model.addAttribute("product", product);
+        return "add-product-form";
+    }
+
+    @RequestMapping(path="/add", method=RequestMethod.POST)
+    public String showAddForm(Product product) {
+        productService.addProduct(product);
+        return "redirect:/students/list";
     }
 
 
