@@ -25,7 +25,7 @@ public class ProductsController {
     @Autowired
     public void setCategoryService(CategoryService categoryService) {this.categoryService = categoryService;}
 
-    @RequestMapping(value = "/allproducts", method = RequestMethod.GET)
+    @RequestMapping(value = "/allproducts")
     @ResponseBody
     public String getAllProducts(Model model) {
          List<Product> products = productService.getAllProducts();
