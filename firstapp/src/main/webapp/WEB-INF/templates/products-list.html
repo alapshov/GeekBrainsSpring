@@ -1,11 +1,9 @@
-<!--/*@thymesVar id="studentsList" type="java.util.List<com.geekbrains.entities.Student>"*/-->
-
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-  <title>Students List</title>
+  <title>Products List</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
   <script type="text/javascript" th:src="@{/webjars/jquery/3.3.1/dist/jquery.min.js}"></script>
@@ -18,12 +16,12 @@
 <body>
 <div class="fluid-container">
   <nav>
-    <div th:replace="~{my-menu :: mymenu(StudentsList)}">
+    <div th:replace="~{my-menu :: mymenu(ProductList)}">
     </div>
   </nav>
 </div>
 <div class="container">
-  <h1>Students List</h1>
+  <h1>Products List</h1>
   <table class="table">
     <thead>
     <tr class="thead-dark">
@@ -35,30 +33,27 @@
     </tr>
     </thead>
 
-    <!--<tr th:each="student : ${studentsList}" th:inline="text">-->
+
     <tr th:each="product : ${productList}">
       <td th:text="${product.id}"/>
       <td th:text="${product.name}"/>
-      <!--            <td th:text="${student.name.length()}"/>-->
-      <!--&lt;!&ndash;<h1>Hello [[${student.name}]]!</h1>&ndash;&gt;-->
 
       <td>
         <button class="btn btn-primary infoBtn" th:attr="entryIndex=${product.id}">Info</button>
-<!--        <button class="btn btn-primary removeBtn" th:attr="entryIndex=${student.id}">Remove</button>-->
         <a class="btn btn-danger" th:href="@{'/product/delete/' + ${product.id}}" role="button">Remove</a>
       </td>
       <td>
         <!--<p th:class="${text-white.property} ? 'one' : 'two'"/">-->
-                        <p th:if="${student.name.length()} &gt; 3">
+                        <p th:if="${product.title.length()} &gt; 3">
                             Normal
                         </p>
-                        <p class="p-3 mb-2 bg-danger text-white" th:unless="${student.name.length()} &gt; 3">
+                        <p class="p-3 mb-2 bg-danger text-white" th:unless="${product.title.length()} &gt; 3">
                             To short
                         </p>
       </td>
 
       <td th:each="course : ${product.category}">
-        <span th:text="${course.title}"></span>
+        <span th:text="${category.title}"></span>
       </td>
     </tr>
   </table>
