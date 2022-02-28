@@ -36,11 +36,11 @@
 
     <tr th:each="product : ${productList}">
       <td th:text="${product.id}"/>
-      <td th:text="${product.name}"/>
+      <td th:text="${product.title}"/>
 
       <td>
         <button class="btn btn-primary infoBtn" th:attr="entryIndex=${product.id}">Info</button>
-        <a class="btn btn-danger" th:href="@{'/product/delete/' + ${product.id}}" role="button">Remove</a>
+        <a class="btn btn-danger" th:href="@{'/products/delete/' + ${product.id}}" role="button">Remove</a>
       </td>
       <td>
         <!--<p th:class="${text-white.property} ? 'one' : 'two'"/">-->
@@ -52,9 +52,9 @@
                         </p>
       </td>
 
-      <td th:each="course : ${product.category}">
-        <span th:text="${category.title}"></span>
-      </td>
+<!--      <td th:each="category : ${product.category}">-->
+<!--        <span th:text="${category.title}"></span>-->
+<!--      </td>-->
     </tr>
   </table>
   <!--<br>-->

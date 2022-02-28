@@ -26,7 +26,6 @@ public class ProductsController {
     public void setCategoryService(CategoryService categoryService) {this.categoryService = categoryService;}
 
     @RequestMapping(value = "/allproducts")
-    @ResponseBody
     public String getAllProducts(Model model) {
          List<Product> products = productService.getAllProducts();
          model.addAttribute("productList", products);
@@ -34,24 +33,20 @@ public class ProductsController {
     }
 
     @RequestMapping(value = "/product/{id}", method = RequestMethod.GET)
-    @ResponseBody
     public Product getProductById(Model model, @PathVariable("id") int id) {
         return productService.getProductById(id);
     }
 
     @RequestMapping(value = "/allcategories", method = RequestMethod.GET)
-    @ResponseBody
     public List<Category> getAllCategories() {
         return categoryService.getAllCategories();
     }
 
     @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
-    @ResponseBody
     public Category getCategoryById(Model model, @PathVariable("id") int id) {
         return categoryService.getCategoryById(id);
     }
-    @RequestMapping(value = "/product/delete/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     public String deleteById(Model model, @PathVariable("id") int id) {
         productService.deleteProductById(id);
         return "/products/allproducts";
