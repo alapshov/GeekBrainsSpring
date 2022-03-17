@@ -22,4 +22,6 @@ public interface StudentsRepository extends PagingAndSortingRepository<Student, 
     List<Student> getStudentsByCoursesCountDescHQL(Pageable pageable);
 
     Student findOneById(Long id);
+
+
 }
