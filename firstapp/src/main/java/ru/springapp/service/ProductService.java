@@ -5,7 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.springapp.repositories.ProductRepository;
 
-import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 @Service
@@ -26,7 +25,7 @@ public class ProductService {
     }
     public void deleteProductById(int id) {productRepository.deleteById(id);}
 
-    public void addProduct(Product product) {
-        productRepository.save(product);
+    public Product saveOrUpdateProduct(Product product) {
+        return productRepository.save(product);
     }
 }

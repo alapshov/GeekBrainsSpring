@@ -16,8 +16,8 @@ public class Category {
     private String title;
     @Column(name = "description")
     private String description;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
-    private List<Product> productList;
+//    @OneToMany(fetch = FetchType.EAGER, mappedBy = "category")
+//    private List<Product> productList;
 
     public Category() {
     }
@@ -26,7 +26,7 @@ public class Category {
         this.id = id;
         this.title = title;
         this.description = description;
-        this.productList = productList;
+        //this.productList = productList;
     }
 
     public int getId() {
@@ -53,11 +53,11 @@ public class Category {
         this.description = description;
     }
 
-    public List<Product> getProductList() {
-        return productList;
-    }
+    //public List<Product> getProductList() {
+      //  return productList;
+    //}
 
-    public void setProductList(List<Product> productList) {
-        this.productList = productList;
-    }
+//    public void setProductList(List<Product> productList) {
+//        this.productList = productList;
+//    }
 }

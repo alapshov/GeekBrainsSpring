@@ -62,7 +62,7 @@ public class ProductsController {
 
     @RequestMapping(path="/add", method=RequestMethod.POST)
     public String showAddForm(Product product) {
-        productService.addProduct(product);
+        productService.saveOrUpdateProduct(product);
         return "redirect:/students/list";
     }
 

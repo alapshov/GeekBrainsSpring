@@ -7,7 +7,7 @@ import org.eclipse.jetty.webapp.WebAppContext;
 
 public class Launcher {
     public static void main(String[] args) throws Exception {
-        Server server = new Server(8191);
+        Server server = new Server(8192);
 
         ProtectionDomain domain = Launcher.class.getProtectionDomain();
         URL location = domain.getCodeSource().getLocation();
