@@ -26,7 +26,7 @@
 
     <context:component-scan base-package="ru.springapp"/>
 
-    <bean id="bcrypt" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
+
     <bean id="templateResolver" class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
         <property name="prefix" value="/WEB-INF/templates/"/>
         <property name="suffix" value=".html"/>
